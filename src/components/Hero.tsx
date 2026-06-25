@@ -126,13 +126,14 @@ export default function Hero() {
             className="flex flex-wrap items-center justify-center gap-4 mb-12"
           >
             <motion.a
-              href="#"
+              href="/resume.pdf"
+              download="Shanmukha_Roopesh_Resume.pdf"
               className="btn-primary flex items-center gap-2 group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <FiDownload size={18} />
-              Download Resume
+              Download CV
             </motion.a>
             <motion.a
               href="#projects"
