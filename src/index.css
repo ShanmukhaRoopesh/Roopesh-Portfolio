@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: none;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    cursor: none;
+  }
+
+  a, button, input, textarea, select, [role="button"] {
+    cursor: none;
+  }
+
+  ::selection {
+    @apply bg-primary-500 text-white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-dark-secondary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-500 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-600;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 dark:bg-dark-card/70 backdrop-blur-xl border border-white/20 dark:border-dark-border/30 shadow-glass dark:shadow-glass-dark;
+  }
+
+  .glass-card {
+    @apply bg-white/80 dark:bg-dark-card/80 backdrop-blur-lg rounded-2xl border border-white/20 dark:border-dark-border/30 shadow-lg;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-500 via-accent-500 to-primary-600 bg-clip-text text-transparent;
+    background-size: 200% auto;
+    animation: gradient 8s ease infinite;
+  }
+
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(135deg, #0066ff, #00d7a1);
+    padding: 2px;
+    border-radius: 1rem;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    @apply bg-white dark:bg-dark-card rounded-xl;
+    z-index: 1;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-glow transform hover:-translate-y-0.5 transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-white dark:bg-dark-tertiary text-primary-600 dark:text-primary-400 font-semibold rounded-xl border-2 border-primary-500 hover:bg-primary-50 dark:hover:bg-dark-border transform hover:-translate-y-0.5 transition-all duration-300;
+  }
+
+  .section-heading {
+    @apply text-4xl md:text-5xl font-heading font-bold text-gray-900 dark:text-white mb-4;
+  }
+
+  .section-subheading {
+    @apply text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto;
+  }
+
+  .card-hover {
+    @apply transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
